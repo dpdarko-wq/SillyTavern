@@ -267,6 +267,7 @@ export async function getGroupChat(groupId, reload = false) {
     const data = await loadGroupChat(chat_id);
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     const metadata = data?.[0]?.chat_metadata ?? {};
     const freshChat = !metadata.tainted && (!Array.isArray(data) || !data.length);
 =======
@@ -283,6 +284,10 @@ export async function getGroupChat(groupId, reload = false) {
     if (!metadata.integrity) {
         metadata.integrity = uuidv4();
     }
+=======
+    const metadata = group.chat_metadata ?? {};
+    const freshChat = !metadata.tainted;
+>>>>>>> Stashed changes
 =======
     const metadata = group.chat_metadata ?? {};
     const freshChat = !metadata.tainted;
