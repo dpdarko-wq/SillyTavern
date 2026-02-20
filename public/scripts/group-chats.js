@@ -265,8 +265,13 @@ export async function getGroupChat(groupId, reload = false) {
 
     const chat_id = group.chat_id;
     const data = await loadGroupChat(chat_id);
+<<<<<<< Updated upstream
     const metadata = data?.[0]?.chat_metadata ?? {};
     const freshChat = !metadata.tainted && (!Array.isArray(data) || !data.length);
+=======
+    const metadata = group.chat_metadata ?? {};
+    const freshChat = !metadata.tainted;
+>>>>>>> Stashed changes
 
     // Remove chat file header if present
     if (Array.isArray(data) && data.length && Object.hasOwn(data[0], 'chat_metadata')) {
